@@ -10,10 +10,6 @@ module.exports = {
       },
       idSeller: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "Users",
-          key: "id",
-        },
       },
       productName: {
         type: Sequelize.STRING,

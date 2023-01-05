@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Products extends Model {
     /**
@@ -12,26 +10,26 @@ module.exports = (sequelize, DataTypes) => {
     // eslint-disable-next-line no-unused-vars
     static associate(models) {
       // define association here
-      models.Products.belongsTo(models.Users, {
-        foreignKey: "idSeller",
-      });
     }
   }
-  Products.init({
-    idSeller: DataTypes.INTEGER,
-    productName: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    category: DataTypes.STRING,
-    description: DataTypes.STRING,
-    image: DataTypes.STRING,
-    status: DataTypes.STRING,
-    createdBy: DataTypes.INTEGER,
-    deletedBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
-    deletedAt: DataTypes.DATE
-  }, {
-    sequelize,
-    modelName: 'Products',
-  });
+  Products.init(
+    {
+      idSeller: DataTypes.INTEGER,
+      productName: DataTypes.STRING,
+      price: DataTypes.INTEGER,
+      category: DataTypes.STRING,
+      description: DataTypes.STRING,
+      image: DataTypes.STRING,
+      status: DataTypes.STRING,
+      createdBy: DataTypes.INTEGER,
+      deletedBy: DataTypes.INTEGER,
+      updatedBy: DataTypes.INTEGER,
+      deletedAt: DataTypes.DATE,
+    },
+    {
+      sequelize,
+      modelName: "Products",
+    }
+  );
   return Products;
 };
